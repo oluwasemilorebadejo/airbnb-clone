@@ -3,7 +3,7 @@ export const londonProperties = [
     id: "1",
     image:
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-    title: "Room in St. Dunstan's and Stepney Green",
+    title: "Room in St. Dunstan",
     price: "$129 for 2 nights · 4.79",
     rating: 4.79,
     isGuestFavorite: false,
@@ -53,15 +53,6 @@ export const londonProperties = [
     rating: 4.9,
     isGuestFavorite: true,
   },
-  {
-    id: "7",
-    image:
-      "https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2187&q=80",
-    title: "Room in Hackney",
-    price: "$99 for 2 nights · 4.88",
-    rating: 4.88,
-    isGuestFavorite: false,
-  },
 ];
 
 export const capeTownProperties = [
@@ -92,15 +83,15 @@ export const capeTownProperties = [
     rating: 4.96,
     isGuestFavorite: true,
   },
-  {
-    id: "11",
-    image:
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    title: "Cozy studio apartment",
-    price: "$120 per night",
-    rating: 4.78,
-    isGuestFavorite: false,
-  },
+  // {
+  //   id: "11",
+  //   image:
+  //     "https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   title: "Cozy studio apartment",
+  //   price: "$120 per night",
+  //   rating: 4.78,
+  //   isGuestFavorite: false,
+  // },
   {
     id: "12",
     image:
