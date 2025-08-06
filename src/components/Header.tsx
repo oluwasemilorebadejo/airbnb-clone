@@ -21,7 +21,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="logo">
             <svg
-              width="102"
+              width="32"
               height="32"
               fill="#FF385C"
               style={{ display: "block" }}
