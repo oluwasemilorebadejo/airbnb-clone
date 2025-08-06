@@ -1,0 +1,127 @@
+.inspiration-section {
+  padding: 48px 0;
+  background: #f7f7f7;
+}
+
+.inspiration-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0 0 32px 0;
+}
+
+.inspiration-tabs {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #717171;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab-button:hover {
+  color: #222222;
+}
+
+.tab-button.active {
+  color: #222222;
+}
+
+.tab-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #222222;
+}
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px 24px;
+}
+
+.inspiration-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.inspiration-item:hover {
+  color: #222222;
+}
+
+.inspiration-item:hover .inspiration-title-text {
+  text-decoration: underline;
+}
+
+.inspiration-title-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom: 2px;
+}
+
+.inspiration-location {
+  font-size: 14px;
+  color: #717171;
+}
+
+.show-more-icon {
+  margin-left: 8px;
+  color: #222222;
+}
+
+@media (max-width: 768px) {
+  .inspiration-section {
+    padding: 32px 0;
+  }
+
+  .inspiration-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .inspiration-tabs {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .tab-button {
+    font-size: 14px;
+  }
+
+  .inspiration-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px 16px;
+  }
+
+  .inspiration-title-text {
+    font-size: 13px;
+  }
+
+  .inspiration-location {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inspiration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

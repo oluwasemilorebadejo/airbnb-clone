@@ -1,0 +1,243 @@
+.header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  transition: height 0.3s ease;
+}
+
+.header.scrolled .header-content {
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logo-text {
+  font-size: 21px;
+  font-weight: 600;
+  color: #ff385c;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  font-weight: 500;
+  color: #717171;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #222222;
+}
+
+.nav-item:first-child {
+  color: #222222;
+  border-bottom: 2px solid #222222;
+  border-radius: 0;
+  padding-bottom: 8px;
+}
+
+.nav-badge {
+  background: #ff385c;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  position: absolute;
+  top: 2px;
+  left: 8px;
+}
+
+.nav-icon {
+  font-size: 16px;
+}
+
+/* Compact Search Bar */
+.compact-search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.compact-search.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.compact-search-content {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #dddddd;
+  border-radius: 40px;
+  padding: 8px 8px 8px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-width: 300px;
+}
+
+.search-item-compact {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  white-space: nowrap;
+}
+
+.search-divider-compact {
+  width: 1px;
+  height: 24px;
+  background-color: #dddddd;
+}
+
+.compact-search-button {
+  background: #ff385c;
+  border-radius: 50%;
+  padding: 8px;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.1s ease;
+}
+
+.compact-search-button:hover {
+  transform: scale(1.05);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.become-host {
+  padding: 12px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.become-host:hover {
+  background-color: #f7f7f7;
+}
+
+.become-host.hidden {
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+}
+
+.language-selector {
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.language-selector:hover {
+  background-color: #f7f7f7;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 5px 12px;
+  border: 1px solid #dddddd;
+  border-radius: 21px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  gap: 12px;
+}
+
+.user-menu:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.menu-icon {
+  font-size: 14px;
+  color: #717171;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #717171;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .become-host {
+    display: none;
+  }
+
+  .header-content {
+    height: 70px;
+  }
+
+  .compact-search-content {
+    min-width: 250px;
+    padding: 6px 6px 6px 12px;
+  }
+
+  .search-item-compact {
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+
+  .compact-search-button {
+    padding: 6px;
+  }
+}
