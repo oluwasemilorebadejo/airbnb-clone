@@ -22,7 +22,26 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ title, properties }) => {
     <section className="property-grid-section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">{title}</h2>
+          <h2 className="section-title">
+            {title}
+            <svg
+              viewBox="0 0 18 18"
+              role="presentation"
+              aria-hidden="true"
+              style={{
+                display: "inline-block",
+                fill: "none",
+                height: "16px",
+                width: "16px",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                overflow: "visible",
+                marginLeft: "8px",
+              }}
+            >
+              <polyline fill="none" points="6 4 12 10 6 16"></polyline>
+            </svg>
+          </h2>
           <button className="view-all-button">
             <span>View all</span>
             <svg
