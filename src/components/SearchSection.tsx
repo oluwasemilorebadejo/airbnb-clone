@@ -1,4 +1,5 @@
 import React from "react";
+import { FiSearch } from "react-icons/fi";
 import "./SearchSection.css";
 
 const SearchSection: React.FC = () => {
@@ -26,21 +27,7 @@ const SearchSection: React.FC = () => {
             <input type="text" placeholder="Add guests" />
           </div>
           <button className="search-button">
-            <svg
-              viewBox="0 0 32 32"
-              style={{
-                display: "block",
-                fill: "none",
-                height: "16px",
-                width: "16px",
-                stroke: "currentColor",
-                strokeWidth: "4",
-                overflow: "visible",
-              }}
-            >
-              <path fill="none" d="m13 13 4 4-4 4M21 12l-4 4 4 4"></path>
-              <circle cx="12" cy="12" r="9"></circle>
-            </svg>
+            <FiSearch size={16} />
           </button>
         </div>
       </div>
