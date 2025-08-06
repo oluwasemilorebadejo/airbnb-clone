@@ -8,6 +8,7 @@ interface Property {
   title: string;
   price: string;
   rating: number;
+  details: string;
   isGuestFavorite?: boolean;
 }
 
@@ -51,6 +52,7 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ title, properties }) => {
               title={property.title}
               price={property.price}
               rating={property.rating}
+              details={property.details}
               isGuestFavorite={property.isGuestFavorite}
             />
           ))}

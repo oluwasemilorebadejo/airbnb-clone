@@ -53,39 +53,32 @@
   padding: 0 2px;
 }
 
-.property-header {
+.property-details {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 4px;
+  align-items: center;
+  gap: 2px;
+  color: #717171;
+  font-size: 0.75rem;
 }
 
 .property-title {
   font-size: 0.8175rem;
-  font-weight: 400;
+  font-weight: bold;
   color: #222222;
   line-height: 1.2;
-  margin: 0;
-  flex: 1;
-  margin-right: 8px;
-  font-weight: bold;
+  margin: 0 0 4px 0;
 }
 
 .property-rating {
   display: flex;
   align-items: center;
   gap: 2px;
-  font-size: 14px;
-  color: #222222;
-  font-weight: 400;
 }
 
 .property-price {
-  font-size: 15px;
-  color: #222222;
   margin: 0;
 }
 
-.property-price strong {
-  font-weight: 600;
+.property-separator {
+  margin: 0 2px;
 }
