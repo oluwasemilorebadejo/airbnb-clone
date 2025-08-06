@@ -25,15 +25,13 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
+  background: transparent;
   padding: 6px;
-  color: #717171;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  color: white;
+  transition: color 0.2s ease;
 }
 
 .favorite-button:hover {
-  background: white;
   color: #ff385c;
 }
 
