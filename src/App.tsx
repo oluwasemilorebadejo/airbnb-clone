@@ -9,8 +9,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Header />
       <SearchSection />
+      <Header />
       <PropertyGrid
         title="Popular homes in London"
         properties={londonProperties}
