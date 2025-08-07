@@ -55,8 +55,7 @@
 
 .inspiration-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   cursor: pointer;
   padding: 8px 0;
   transition: color 0.2s ease;
@@ -72,7 +71,7 @@
 
 .inspiration-title-text {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   color: #222222;
   margin-bottom: 2px;
 }
@@ -80,6 +79,12 @@
 .inspiration-location {
   font-size: 14px;
   color: #717171;
+}
+
+.show-more-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .show-more-icon {

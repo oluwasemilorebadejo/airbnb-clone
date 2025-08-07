@@ -88,29 +88,40 @@ const InspirationSection: React.FC = () => {
 
         <div className="inspiration-grid">
           {getCurrentData().map((item, index) => (
-            <div key={index} className="inspiration-item">
-              <div className="inspiration-title-text">{item.title}</div>
-              {item.location && (
-                <div className="inspiration-location">{item.location}</div>
-              )}
-              {item.title === "Show more" && (
-                <svg
-                  viewBox="0 0 18 18"
-                  role="presentation"
-                  aria-hidden="true"
-                  className="show-more-icon"
-                  style={{
-                    display: "block",
-                    fill: "none",
-                    height: "12px",
-                    width: "12px",
-                    stroke: "currentColor",
-                    strokeWidth: "3",
-                    overflow: "visible",
-                  }}
-                >
-                  <polyline fill="none" points="6 9 12 15 18 9"></polyline>
-                </svg>
+            <div
+              key={index}
+              className={`inspiration-item ${
+                item.title === "Show more" ? "show-more-item" : ""
+              }`}
+            >
+              {item.title === "Show more" ? (
+                <div className="show-more-content">
+                  <div className="inspiration-title-text">{item.title}</div>
+                  <svg
+                    viewBox="0 0 18 18"
+                    role="presentation"
+                    aria-hidden="true"
+                    className="show-more-icon"
+                    style={{
+                      display: "block",
+                      fill: "none",
+                      height: "12px",
+                      width: "12px",
+                      stroke: "currentColor",
+                      strokeWidth: "3",
+                      overflow: "visible",
+                    }}
+                  >
+                    <polyline fill="none" points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              ) : (
+                <>
+                  <div className="inspiration-title-text">{item.title}</div>
+                  {item.location && (
+                    <div className="inspiration-location">{item.location}</div>
+                  )}
+                </>
               )}
             </div>
           ))}

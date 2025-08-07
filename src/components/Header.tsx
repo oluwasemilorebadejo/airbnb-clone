@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { HiOutlineGlobeAlt } from "react-icons/hi2";
+import { HiOutlineMenu } from "react-icons/hi";
 import "./Header.css";
 
 const Header: React.FC = () => {
@@ -82,10 +84,11 @@ const Header: React.FC = () => {
             <span className={`become-host ${isScrolled ? "hidden" : ""}`}>
               Become a host
             </span>
-            <div className="language-selector">🌐</div>
+            <div className="language-selector">
+              <HiOutlineGlobeAlt size={18} />
+            </div>
             <div className="user-menu">
-              <div className="menu-icon">☰</div>
-              <div className="user-avatar">👤</div>
+              <HiOutlineMenu size={16} />
             </div>
           </div>
         </div>
