@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropertyCard from "./PropertyCard";
 import "./PropertyGrid.css";
 
@@ -18,6 +18,28 @@ interface PropertyGridProps {
 }
 
 const PropertyGrid: React.FC<PropertyGridProps> = ({ title, properties }) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = 280 + 12; // Card width + gap
+      scrollContainerRef.current.scrollBy({
+        left: -cardWidth * 2,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = 280 + 12; // Card width + gap
+      scrollContainerRef.current.scrollBy({
+        left: cardWidth * 2,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="property-grid-section">
       <div className="container">
@@ -43,7 +65,11 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ title, properties }) => {
             </svg>
           </h2>
           <div className="navigation-buttons">
-            <button className="nav-button nav-button-disabled">
+            <button
+              className="nav-button"
+              onClick={scrollLeft}
+              aria-label="Scroll left"
+            >
               <svg
                 viewBox="0 0 18 18"
                 role="presentation"
@@ -53,7 +79,7 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ title, properties }) => {
                   fill: "none",
                   height: "16px",
                   width: "16px",
-                  stroke: "#CCCCCC",
+                  stroke: "currentColor",
                   strokeWidth: "2",
                   overflow: "visible",
                 }}
@@ -61,7 +87,11 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ title, properties }) => {
                 <polyline fill="none" points="12 4 6 10 12 16"></polyline>
               </svg>
             </button>
-            <button className="nav-button">
+            <button
+              className="nav-button"
+              onClick={scrollRight}
+              aria-label="Scroll right"
+            >
               <svg
                 viewBox="0 0 18 18"
                 role="presentation"
@@ -81,7 +111,7 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ title, properties }) => {
             </button>
           </div>
         </div>
-        <div className="property-grid">
+        <div className="property-grid" ref={scrollContainerRef}>
           {properties.map((property) => (
             <PropertyCard
               key={property.id}

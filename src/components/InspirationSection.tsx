@@ -1,8 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./InspirationSection.css";
 
 const InspirationSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState("unique-stays");
+  const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      setIsSmallMobile(window.innerWidth <= 480);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const uniqueStaysData = [
     { title: "Cabins", location: "United States" },
@@ -44,14 +58,26 @@ const InspirationSection: React.FC = () => {
   ];
 
   const getCurrentData = () => {
+    let data;
     switch (activeTab) {
       case "travel-tips":
-        return travelTipsData;
+        data = travelTipsData;
+        break;
       case "apartments":
-        return apartmentsData;
+        data = apartmentsData;
+        break;
       default:
-        return uniqueStaysData;
+        data = uniqueStaysData;
     }
+
+    // Limit items on mobile to show only 4 rows
+    if (isMobile) {
+      const itemsPerRow = isSmallMobile ? 2 : 4; // 2 columns on small mobile, 4 on tablet
+      const maxItems = 4 * itemsPerRow; // 4 rows
+      return data.slice(0, maxItems);
+    }
+
+    return data;
   };
 
   return (
